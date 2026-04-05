@@ -43,10 +43,21 @@
     background: var(--warm-white);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 64px 72px;
     position: relative;
     overflow: hidden;
+  }
+
+  .cover-constrain {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
   }
 
   .cover::before {
@@ -96,16 +107,19 @@
   }
 
   .cover-inner {
-    width: fit-content;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 440px;
     gap: 48px;
     align-items: center;
+    justify-items: center;
     position: relative;
     z-index: 1;
   }
 
   .cover-body {
+    justify-self: start;
+    width: 100%;
     position: relative;
     z-index: 1;
   }
@@ -144,11 +158,13 @@
   }
 
   .cover-tato {
+    justify-self: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-bottom: 32px;
+    padding-bottom: 40px;
   }
 
   .cover-tato img,
@@ -813,6 +829,25 @@
     body { background: #fff; }
   }
 
+  @media (max-width: 960px) {
+    .cover-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .cover-body {
+      justify-self: center;
+      text-align: center;
+    }
+    .cover-subtitle {
+      border-left: none;
+      border-top: 2px solid var(--coral);
+      padding-left: 0;
+      padding-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
   @media (max-width: 700px) {
     .pilares-grid { grid-template-columns: 1fr 1fr; }
     .publicos-grid, .formatos-grid, .metricas-grid, .laboratorio-block { grid-template-columns: 1fr; }
@@ -827,15 +862,6 @@
   }
 
   /* ── RIVE FALLBACK BEAR ── */
-  .cover-tato {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-bottom: 40px;
-  }
-
   .bear-wrapper {
     width: 420px;
     height: 420px;
@@ -856,6 +882,7 @@
 
 <!-- ══════════════════════ COVER ══════════════════════ -->
 <section class="cover">
+  <div class="cover-constrain">
   <div class="cover-top">
     <div>
       <div class="wordmark-svg">
@@ -899,6 +926,7 @@
       <div class="tag">Meses 1–6</div>
     </div>
     <div class="cover-date">Documento interno · Direção Criativa</div>
+  </div>
   </div>
 </section>
 
