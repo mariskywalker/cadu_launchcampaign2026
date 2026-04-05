@@ -274,6 +274,33 @@
     margin-bottom: 48px;
   }
 
+  .cadu-intro-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 46%);
+    gap: 40px;
+    align-items: start;
+    margin-top: 4px;
+  }
+
+  .cadu-intro-layout .cadu-intro-copy {
+    max-width: none;
+  }
+
+  .cadu-intro-figure {
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 40px rgba(44, 42, 40, 0.06);
+  }
+
+  .cadu-intro-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .cadu-intro-copy {
     max-width: 680px;
   }
@@ -861,6 +888,16 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    .cadu-intro-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .cadu-intro-figure {
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   @media (max-width: 700px) {
@@ -946,16 +983,21 @@
 </section>
 
 <!-- ══════════════════════ O QUE É O CADU ══════════════════════ -->
-<section class="page">
+<section class="page cadu-intro-page">
   <div class="section-label">O CADU</div>
   <h2 class="section-title">O que é o <strong>CADU</strong></h2>
-  <div class="cadu-intro-copy">
-    <p>
-      O CADU é uma infraestrutura de Open Health que conecta clínicas, famílias e ativos de desenvolvimento infantil em um sistema contínuo de cuidado.
-    </p>
-    <p>
-      Ele nasce dentro da Casa do Urso, que funciona como um laboratório vivo, onde tudo é testado, validado e evoluído em tempo real com famílias reais.
-    </p>
+  <div class="cadu-intro-layout">
+    <div class="cadu-intro-copy">
+      <p>
+        O CADU é uma infraestrutura de Open Health que conecta clínicas, famílias e ativos de desenvolvimento infantil em um sistema contínuo de cuidado.
+      </p>
+      <p>
+        Ele nasce dentro da Casa do Urso, que funciona como um laboratório vivo, onde tudo é testado, validado e evoluído em tempo real com famílias reais.
+      </p>
+    </div>
+    <figure class="cadu-intro-figure">
+      <img class="cadu-intro-svg" src="UI.svg" width="1052" height="758" alt="Interface do aplicativo CADU" loading="lazy" decoding="async" />
+    </figure>
   </div>
 </section>
 
